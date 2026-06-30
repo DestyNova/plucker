@@ -5,7 +5,7 @@
 
 __version__ = "2005-02-07-cvs"
 
-lib_dir = "/usr/local/etc"
+lib_dir = "/home/omf/.local/etc"
 
 DEFAULT_IMAGE_PARSER_SETTING = "netpbm2"
 

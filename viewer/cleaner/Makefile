@@ -2,7 +2,7 @@
 # $Id: Makefile.in,v 1.3 2003/08/03 14:07:03 nordstrom Exp $
 #
 
-SHELL           =   /bin/sh
+SHELL           =   /bin/bash
 
 top_builddir    =   ..
 subdir          =   cleaner
@@ -27,7 +27,7 @@ GCC             =   /usr/bin/m68k-palmos-gcc
 OBJ_RES         =   /usr/bin/m68k-palmos-obj-res
 AS              =   /usr/bin/m68k-palmos-as -m68000 -mno-68881 -l
 MULTISEGSTUBGEN =   @MULTISEGSTUBGEN@
-PILRC           =   /usr/local/bin/pilrc
+PILRC           =   /usr/bin/pilrc
 BUILD_PRC       =   /usr/bin/build-prc
 
 PRC             =   $(foreach lang, $(LANG), $(APP)_$(lang).prc)

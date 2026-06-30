@@ -2,7 +2,7 @@
 # $Id: Makefile.in,v 1.6 2003/08/03 14:07:02 nordstrom Exp $
 #
 
-SHELL           =   /bin/sh
+SHELL           =   /bin/bash
 
 top_builddir    =   ../..
 subdir          =   tools/unpluck
@@ -11,8 +11,8 @@ srcdir          =   .
 
 DESTDIR	        =
 
-BINDIR          =   $(DESTDIR)/usr/local/bin
-LIBDIR          =   $(DESTDIR)/usr/local/lib
+BINDIR          =   $(DESTDIR)/home/omf/.local/bin
+LIBDIR          =   $(DESTDIR)/home/omf/.local/lib
 DATADIR         =   $(DESTDIR)${prefix}/share/plucker
 
 INSTALL         =   /usr/bin/install -c
@@ -24,8 +24,8 @@ TARGET          =   libunpluck.a
 RANLIB          =   ranlib
 
 CC              =   gcc
-CFLAGS          =   -g -O2 
-CPPFLAGS        =    -DPLUCKER_VERSION="2005-02-07-cvs" -DPLUCKER_CONFIG_DIR="/usr/local/etc" -DSYS_CONFIG_FILE_NAME="pluckerrc" -DUSER_CONFIG_FILE_NAME=".pluckerrc" -DFILE_SEPARATOR_CHAR_S="/" -DOS_SECTION_NAME="posix"
+CFLAGS          =   -g -O2
+CPPFLAGS        =    -DPLUCKER_VERSION="2005-02-07-cvs" -DPLUCKER_CONFIG_DIR="/home/omf/.local/etc" -DSYS_CONFIG_FILE_NAME="pluckerrc" -DUSER_CONFIG_FILE_NAME=".pluckerrc" -DFILE_SEPARATOR_CHAR_S="/" -DOS_SECTION_NAME="posix"
 
 SOURCES         =   unpluck.c config.c util.c
 

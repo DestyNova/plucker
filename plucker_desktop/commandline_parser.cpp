@@ -94,6 +94,7 @@ commandline_parser* commandline_parser::set( commandline_parser *desired_command
     return old_commandline_parser;
 }
 
+#define wxT_w(X) wxString((X)).mb_str()
 
 bool commandline_parser::do_commandline( int argc, wxChar** argv )
 {
@@ -102,7 +103,7 @@ bool commandline_parser::do_commandline( int argc, wxChar** argv )
     // This will get rid of the time stamps preceeding log messages, as they make the
     // console output harder to read.
     // Vaclav has this line inside a !defined(__WXMSW__)
-    wxLog::SetTimestamp( NULL );
+    wxLog::SetTimestamp("");
 
     // This will put messages to the console instead of Log dialogs.
     // MSW won't print things to the console, so leave it as Log dialogs on that platform.
@@ -112,13 +113,13 @@ bool commandline_parser::do_commandline( int argc, wxChar** argv )
 
     static const wxCmdLineEntryDesc commandline_description[] =
     {
-        { wxCMD_LINE_SWITCH, wxT( "h" ),  wxT( "help" ),              wxT( "Show help message" ),
+        { wxCMD_LINE_SWITCH, wxT_w( "h" ),  wxT_w( "help" ),              wxT_w( "Show help message" ),
               wxCMD_LINE_VAL_NONE,   wxCMD_LINE_OPTION_HELP },
-        { wxCMD_LINE_SWITCH, wxT( "s" ),  wxT( "update-selected" ),   wxT( "Update selected channels" ) },
-        { wxCMD_LINE_SWITCH, wxT( "p" ),  wxT( "use-sections" ),      wxT( "Specify channels by section, not doc_name" ) },
-        { wxCMD_LINE_SWITCH, wxT( "d" ),  wxT( "update-due" ),        wxT( "Update due channels" ) },
-        { wxCMD_LINE_SWITCH, wxT( "a" ),  wxT( "update-all" ),        wxT( "Update all channels" ) },
-        { wxCMD_LINE_PARAM,  NULL, NULL,  wxT( "Channels" ),
+        { wxCMD_LINE_SWITCH, wxT_w( "s" ),  wxT_w( "update-selected" ),   wxT_w( "Update selected channels" ) },
+        { wxCMD_LINE_SWITCH, wxT_w( "p" ),  wxT_w( "use-sections" ),      wxT_w( "Specify channels by section, not doc_name" ) },
+        { wxCMD_LINE_SWITCH, wxT_w( "d" ),  wxT_w( "update-due" ),        wxT_w( "Update due channels" ) },
+        { wxCMD_LINE_SWITCH, wxT_w( "a" ),  wxT_w( "update-all" ),        wxT_w( "Update all channels" ) },
+        { wxCMD_LINE_PARAM,  NULL, NULL,  wxT_w( "Channels" ),
               wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_MULTIPLE | wxCMD_LINE_PARAM_OPTIONAL },
         { wxCMD_LINE_NONE }
     };

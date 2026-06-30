@@ -2,7 +2,7 @@
 # $Id: Makefile.in,v 1.9 2004/03/28 04:07:48 prussar Exp $
 #
 
-SHELL           = /bin/sh
+SHELL           = /bin/bash
 
 top_builddir    = ..
 subdir          = xlit

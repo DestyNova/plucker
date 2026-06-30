@@ -23,6 +23,7 @@
 #pragma warning( disable : 4786 )
 
 #include <sstream>
+#include <string.h>
 
 #include "PluckerColors.h"
 #include "GlobalFunctions.h"

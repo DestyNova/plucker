@@ -32,6 +32,7 @@
 #include <errno.h>              /* for errno */
 #include <fcntl.h>              /* for O_RDONLY */
 #include <assert.h>             /* for assert() */
+#include <stdio.h>
 
 #include <zlib.h>
 

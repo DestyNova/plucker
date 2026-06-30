@@ -46,7 +46,7 @@ bool ExclusionList::LoadFile(const char* filename)
     std::ifstream fis(filename);
     std::string line;
 
-    if (fis != 0) {
+    if (fis) {
         while (!fis.eof()) {
             std::getline(fis, line);
             while (isspace(line[0]))

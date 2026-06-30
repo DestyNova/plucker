@@ -8,7 +8,7 @@
 	$(CXX) -c -o $@ $<
 
 
-SHELL           = /bin/sh
+SHELL           = /bin/bash
 
 top_builddir    = ..
 subdir          = plucker_desktop
@@ -19,17 +19,19 @@ DESTDIR	=
 # This is stopping rpm from making a package, since it goes to /usr/local/bin
 # Solution is probably to put %{bindir} as part of the ./config script in the 
 # spec file
-# BINDIR          = $(DESTDIR)/usr/local/bin
-BINDIR			= $(DESTDIR)/usr/bin
+# BINDIR			= $(DESTDIR)/usr/bin
+BINDIR          = $(DESTDIR)/home/omf/.local/bin # actually no, put it where the user asked for now.
 
 
-# The original one. Return to this later, when support non-hard-coded dir locations.
-#DATADIR        = $(DESTDIR)${prefix}/share/plucker
+# Try installing to user's chosen prefix
+DATADIR        = $(DESTDIR)/home/omf/.local/bin/../${prefix}/share/plucker
+LOCALEDIR       = $(DESTDIR)/home/omf/.local/bin/../${prefix}/share/plucker/locale
+DOCSDIR         = $(DESTDIR)/home/omf/.local/bin/../${prefix}/share/plucker/doc/packages/plucker-desktop
 
 # The temp ones, for now
-DATADIR         = $(DESTDIR)/usr/share/plucker-desktop
-LOCALEDIR       = $(DESTDIR)/usr/share/locale
-DOCSDIR         = $(DESTDIR)/usr/share/doc/packages/plucker-desktop
+# DATADIR         = $(DESTDIR)/usr/share/plucker-desktop
+# LOCALEDIR       = $(DESTDIR)/usr/share/locale
+# DOCSDIR         = $(DESTDIR)/usr/share/doc/packages/plucker-desktop
 
 MKINSTALLDIRS   = $(top_builddir)/mkinstalldirs
 

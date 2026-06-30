@@ -237,8 +237,9 @@ void channel_dialog::read_configuration()
 
     doc_name = the_configuration->Read( key, plkrUNNAMED_CHANNEL_NAME );
     // If a file key, strip off the path and extension, leaving only the basename
-    if ( key == wxT( "doc_file" ) || key == wxT( "db_file" ) )
-        wxSplitPath( doc_name.c_str(), NULL, &doc_name, NULL );
+    if ( key == wxT( "doc_file" ) || key == wxT( "db_file" ) ) {
+        wxFileName::SplitPath(doc_name.Clone(), NULL, NULL, &doc_name, NULL);
+    }
 
     XRCCTRL( *this, "channel_dialog_textctrl", wxTextCtrl )
         ->SetValue( doc_name );

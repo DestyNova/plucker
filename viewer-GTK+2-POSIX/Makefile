@@ -2,19 +2,19 @@
 # $Id: Makefile.in,v 1.2 2003/08/03 14:07:04 nordstrom Exp $
 #
 
-SHELL           = /bin/sh
+SHELL           = /bin/bash
 
 top_builddir    = ..
 subdir          = viewer-GTK+2-POSIX
 
 DESTDIR	        =
 
-BINDIR          = $(DESTDIR)/usr/local/bin
+BINDIR          = $(DESTDIR)/home/omf/.local/bin
 DATADIR         = $(DESTDIR)${prefix}/share/plucker
 
 UNPLUCK_DIR     = $(top_builddir)/tools/unpluck
 
-LIBS            =   -lz -lz
+LIBS            =   -lz -ljpeg -lz
 CPPFLAGS        = -I$(UNPLUCK_DIR)  
 CFLAGS          = -g -O2
 

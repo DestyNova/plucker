@@ -2,17 +2,17 @@
 # $Id: Makefile.in,v 1.4 2003/08/03 14:07:02 nordstrom Exp $
 #
 
-SHELL           =   /bin/sh
+SHELL           =   /bin/bash
 
 top_builddir    =   ../../..
 subdir          =   parser/python/PyPlucker
 
 DESTDIR         =
 
-PYTHONDIR       =   /usr/lib/python2.5
-MODULE_DIR      =   $(DESTDIR)/usr/lib/python2.5/site-packages/PyPlucker
+PYTHONDIR       =   
+MODULE_DIR      =   $(DESTDIR)/site-packages/PyPlucker
 
-PYTHON          =   /usr/bin/python
+PYTHON          =   /home/omf/.local/share/mise/installs/python/latest/bin/python
 MKINSTALLDIRS   =   $(top_builddir)/mkinstalldirs
 
 all:

@@ -2,7 +2,7 @@
 # $Id: Makefile.in,v 1.119 2006/11/12 02:00:53 prussar Exp $
 #
 
-SHELL           =   /bin/sh
+SHELL           =   /bin/bash
 
 top_builddir    =   .
 srcdir          =   .
@@ -71,9 +71,9 @@ GCC             =   /usr/bin/m68k-palmos-gcc
 OBJ_RES         =   /usr/bin/m68k-palmos-obj-res
 AS              =   /usr/bin/m68k-palmos-as -m68000 -mno-68881 -l
 MULTIGEN        =   /usr/bin/m68k-palmos-multigen
-PILRC           =   /usr/local/bin/pilrc
+PILRC           =   /usr/bin/pilrc
 BUILD_PRC       =   /usr/bin/build-prc
-CTAGS           =   /usr/bin/ctags
+CTAGS           =   ctags
 AUTOCONF        =   /usr/bin/autoconf
 LN_S            =   ln -s
 PERL            =   /usr/bin/perl

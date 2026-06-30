@@ -50,7 +50,7 @@ bool FileRetriever::retrieve(Url* url, Config* config, Message* message, Resolve
     if (m_parser != 0) {
         if (url->m_contentType.substr(0, 6) == "image/") {
             std::ifstream fis(url->m_urlPath.c_str());
-            if (fis != 0) {
+            if (fis) {
                 char* buffer;
                 size_t size;
                 fis.seekg (0, std::ios_base::end);
@@ -66,7 +66,7 @@ bool FileRetriever::retrieve(Url* url, Config* config, Message* message, Resolve
         }
         else {
             std::ifstream fis(url->m_urlPath.c_str());
-            if (fis != 0) {
+            if (fis) {
                 while (!fis.eof()) {
                     std::string test;
                     std::getline(fis, test);

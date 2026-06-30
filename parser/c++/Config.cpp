@@ -23,6 +23,7 @@
 #pragma warning( disable : 4786 )
 
 #include <sstream>
+#include <string.h>
 
 #if defined(WIN32)
 #include <windows.h>

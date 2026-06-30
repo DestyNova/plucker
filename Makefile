@@ -2,7 +2,7 @@
 # $Id: Makefile.in,v 1.38 2005/04/04 01:46:07 chrish Exp $
 #
 
-SHELL           =   /bin/sh
+SHELL           =   /bin/bash
 
 srcdir          =   .
 
@@ -20,7 +20,7 @@ EXPLODE_DIR     =   $(TOOLS_DIR)/explode
 GTKVIEWER_DIR   =   viewer-GTK+2-POSIX
 CPLUCKER_DIR    =   $(PARSER_DIR)/c++
 
-BINDIR          =   $(DESTDIR)/usr/local/bin
+BINDIR          =   $(DESTDIR)/home/omf/.local/bin
 DOCDIR          =   $(DESTDIR)${prefix}/share/plucker/doc
 DATADIR         =   $(DESTDIR)${prefix}/share/plucker
 
@@ -28,7 +28,7 @@ BUILD_PRC       =   yes
 BUILD_MANUAL    =   no
 BUILD_DESKTOP   =   yes
 BUILD_UNPLUCK   =   yes
-BUILD_EXPLODE   =   no
+BUILD_EXPLODE   =   yes
 BUILD_GTKVIEWER =   no
 BUILD_CPLUCKER  =   yes
 
@@ -44,7 +44,7 @@ Makefile: Makefile.in config.status
 config.status: configure $(CONFIG_STATUS_DEPENDENCIES)
 	$(SHELL) ./config.status --recheck
 
-configure: configure.in $(CONFIGURE_DEPENDENCIES)
+configure: configure.ac $(CONFIGURE_DEPENDENCIES)
 	$(AUTOCONF)
 
 palmos_client:
@@ -111,9 +111,9 @@ install-pluck_comics: pluck_comics
 	cd $(TOOLS_DIR) ; $(MAKE) install-pluck_comics
 
 install-plucker-desktop: plucker-desktop
-    @if test "$(BUILD_DESKTOP)" != "no"; then \
-	    cd $(DESKTOP_DIR) ; $(MAKE) install \
-    fi
+	@if test "$(BUILD_DESKTOP)" != "no"; then \
+		cd $(DESKTOP_DIR) ; $(MAKE) install \
+	fi
 
 install-unpluck: unpluck
 	@if test "$(BUILD_UNPLUCK)" != "no"; then \

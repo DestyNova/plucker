@@ -660,7 +660,7 @@ void showcase_dialog::load_details_htmlwindow_content( long item_id )
             wxLogDebug( m_showcase_field_names.Item( i ) + wxT( " column value is %s"), info.m_text.c_str() );
             // Check to see that that the next text isn't just an empty string, or 
             // a "-1" which means an empty number.
-            if ( info.m_text !=  ( "" || wxT( "-1" ) ) ) {
+            if (info.m_text != "" && info.m_text != wxT( "-1" )) {
                 details_text    += wxT( "<b>") + m_showcase_field_names.Item( i ) + wxT( "</b>: ");
                 details_text    += info.m_text;
                 details_text    += wxT( "<br>");

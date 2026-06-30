@@ -684,7 +684,8 @@ void main_listctrl::load_rows()
                 if ( doc_name == channel_section + wxT( "/doc_file" ) ||
                      doc_name == channel_section + wxT( "/db_file" ) ) 
                 {
-                    wxSplitPath( channel_name.c_str(), NULL, &channel_name, NULL ); 
+                    wxString tmp_channel_name = channel_name.Clone();
+                    wxFileName::SplitPath(tmp_channel_name, NULL, NULL, &channel_name, NULL);
                 }
                 // Insert a new row (item in wxWindows) in the listctrl using
                 // the channel_name value as the string in the 1st column. The

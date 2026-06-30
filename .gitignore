@@ -1,0 +1,12 @@
+config.log
+*.o
+Makefile
+autom4te.cache
+.depend
+*.rcp
+*.def
+*.sedscr
+tools/explode/netscape4-plucker-helper
+plucker_desktop/plucker-desktop
+*.log
+config.status

@@ -2,7 +2,7 @@
 # $Id: Makefile.in,v 1.4 2003/08/03 14:07:01 nordstrom Exp $
 #
 
-SHELL           =   /bin/sh
+SHELL           =   /bin/bash
 
 top_builddir    =   ..
 subdir          =   parser

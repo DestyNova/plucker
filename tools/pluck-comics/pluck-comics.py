@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/omf/.local/share/mise/installs/python/latest/bin/python
 
 """
 pluck-comics.py  $Id: pluck-comics.py.in,v 1.6 2005/01/10 02:01:40 chrish Exp $

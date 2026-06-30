@@ -2,7 +2,7 @@
 # $id$
 #
 
-SHELL           = /bin/sh
+SHELL           = /bin/bash
 
 top_builddir    = ../..
 subdir          = tools/pluck-comics
@@ -13,12 +13,12 @@ VERSION         = 2005-02-07-cvs
 
 DESTDIR         =
 
-BINDIR          = $(DESTDIR)/usr/local/bin
+BINDIR          = $(DESTDIR)/home/omf/.local/bin
 COMICSLIST_DIR  = $(DESTDIR)${prefix}/share/plucker/comics
-MODULE_DIR      = $(DESTDIR)/usr/lib/python2.5/site-packages/PyPlucker
-PYTHONDIR       = /usr/lib/python2.5
+MODULE_DIR      = $(DESTDIR)/site-packages/PyPlucker
+PYTHONDIR       = 
 
-PYTHON          = /usr/bin/python
+PYTHON          = /home/omf/.local/share/mise/installs/python/latest/bin/python
 MKINSTALLDIRS   = $(top_builddir)/mkinstalldirs
 
 

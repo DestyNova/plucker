@@ -2,9 +2,9 @@
 # $Id: Makefile.in,v 1.22 2005/04/29 02:33:11 chrish Exp $
 #
 
-SHELL           =   /bin/sh
+SHELL           =   /bin/bash
 
-prefix          =   /usr/local
+prefix          =   /home/omf/.local
 top_builddir    =   ..
 subdir          =   docs
 srcdir          =   .
@@ -25,7 +25,7 @@ IMGTYPE         =   gif
 
 L2HFLAGS        =   -image_type $(IMGTYPE) -short_index -show_section_numbers -local_icons -address "The Plucker Team" # -split 0, to create a single doc
 
-PYTHON		    =	/usr/bin/python
+PYTHON		    =	/home/omf/.local/share/mise/installs/python/latest/bin/python
 LATEX		    =	
 L2H		        =	
 MKINSTALLDIRS	=	$(top_builddir)/mkinstalldirs

@@ -2,10 +2,10 @@
 # $id$
 #
 
-SHELL		=	/bin/sh
+SHELL		=	/bin/bash
 RM		=	/usr/bin/rm
-JAVAC		=	/usr/local/bin/javac
-JAR		=	
+JAVAC		=	/home/omf/.local/share/mise/installs/java/openjdk-23.0.2/bin/javac
+JAR		=	/home/omf/.local/share/mise/installs/java/openjdk-23.0.2/bin/jar
 JYTHONC		=	
 
 top_builddir	=	../..
@@ -17,12 +17,12 @@ VERSION		=	2005-02-07-cvs
 
 DESTDIR		=
 
-BINDIR		=	$(DESTDIR)/usr/local/bin
-MODULE_DIR	=	$(DESTDIR)/usr/lib/python2.5/site-packages/PyPlucker
+BINDIR		=	$(DESTDIR)/home/omf/.local/bin
+MODULE_DIR	=	$(DESTDIR)/site-packages/PyPlucker
 
 JAVA_TARGET	=	
 JAVA_HOME	=	
-JAVA_CLASSPATH  =	.;C:\Program Files\Java\jre1.6.0_01\lib\ext\QTJava.zip
+JAVA_CLASSPATH  =	.
 
 SUBDIRS		=	PyPlucker
 

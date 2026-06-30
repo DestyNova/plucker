@@ -47,6 +47,7 @@
 //----------------------------------------------------------------------------------------
 
 #include "wx/file.h"                    // wxFile
+#include "wx/filename.h"                // SplitPath
 
 //----------------------------------------------------------------------------------------
 
@@ -183,8 +184,7 @@ bool palm_installer_base::install_files_by_directory( const wxString &output_dir
         {
             // Extract the basename and extension from input_fullname, so 
             // can use it for the target files to copy.
-            wxSplitPath( install_fullname.c_str(), NULL, &install_basename,
-                         &install_extension );
+            wxFileName::SplitPath(install_fullname.Clone(), NULL, NULL, &install_basename, &install_extension);
             install_filename = install_basename + wxT( "." ) + install_extension;                
             output_fullname = stripped_output_directory + wxT( "/" ) + install_filename;
     

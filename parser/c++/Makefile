@@ -2,7 +2,7 @@
 # $Id: Makefile.in,v 1.10 2006/12/18 00:13:10 chrish Exp $
 #
 
-SHELL           =   /bin/sh
+SHELL           =   /bin/bash
 
 top_builddir    =   ../..
 subdir          =   parser/c++/cplucker
@@ -11,8 +11,8 @@ srcdir          =   .
 
 DESTDIR	        =
 
-BINDIR          =   $(DESTDIR)/usr/local/bin
-LIBDIR          =   $(DESTDIR)/usr/local/lib
+BINDIR          =   $(DESTDIR)/home/omf/.local/bin
+LIBDIR          =   $(DESTDIR)/home/omf/.local/lib
 DATADIR         =   $(DESTDIR)${prefix}/share/plucker
 
 INSTALL         =   /usr/bin/install -c

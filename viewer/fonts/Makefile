@@ -2,7 +2,7 @@
 # $Id: Makefile.in,v 1.12 2004/04/04 07:19:09 nordstrom Exp $
 #
 
-SHELL           = /bin/sh
+SHELL           = /bin/bash
 
 top_builddir    = ..
 subdir          = fonts

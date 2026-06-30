@@ -221,7 +221,7 @@ bool details_progress_listbox::export_to_file()
                                 m_log_path,
                                 processed_default_filename,
                                 filename_extension,
-                                wxSAVE | wxOVERWRITE_PROMPT );                                    
+                                wxFD_SAVE | wxFD_OVERWRITE_PROMPT );                                    
 
     // Only do this if clicked OK on file dialog
     if ( a_file_dialog.ShowModal() == wxID_OK )

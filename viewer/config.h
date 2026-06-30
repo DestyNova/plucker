@@ -8,19 +8,19 @@
 /* #undef ENABLE_GESTURE_DEBUG */
 
 /* Define if scroll should stop when reaching bottom of page */
-#define ENABLE_SCROLL_TO_BOTTOM 
+#define ENABLE_SCROLL_TO_BOTTOM /**/
 
 /* Define if using axxpac support */
 /* #undef HAVE_AXXPAC */
 
 /* Define if using anti-aliased fonts */
-#define HAVE_GRAY_FONT 
+#define HAVE_GRAY_FONT /**/
 
 /* Define if using Handera SDK */
 /* #undef HAVE_HANDERA_SDK */
 
 /* Define if using hires */
-#define HAVE_HIRES 
+#define HAVE_HIRES /**/
 
 /* Define if using i-mode support */
 /* #undef HAVE_IMODE */
@@ -41,22 +41,22 @@
 /* #undef HAVE_PALMONE_SDK */
 
 /* Define if using Palm DIA */
-#define HAVE_PALM_DIA 
+#define HAVE_PALM_DIA /**/
 
 /* Define if pilrc supports extended bitmaps */
-#define HAVE_PILRC_EXBMP 
+#define HAVE_PILRC_EXBMP /**/
 
 /* Define if using Rot13 support */
 /* #undef HAVE_ROT13 */
 
 /* Define if using rotate */
-#define HAVE_ROTATE 
+#define HAVE_ROTATE /**/
 
 /* Define if using right-to-left support */
 /* #undef HAVE_RTL */
 
 /* Define if using silkscreen */
-#define HAVE_SILKSCREEN 
+#define HAVE_SILKSCREEN /**/
 
 /* Define if using Sony Silkscreen SDK */
 /* #undef HAVE_SONYSILK_SDK */
@@ -110,22 +110,22 @@
 /* #undef STDC_HEADERS */
 
 /* Define if supporting annotation */
-#define SUPPORT_ANNOTATION 
+#define SUPPORT_ANNOTATION /**/
 
 /* Define if supporting CPU speed change */
 /* #undef SUPPORT_CPUSPEED */
 
 /* Define if supporting PPI */
-#define SUPPORT_PPI 
+#define SUPPORT_PPI /**/
 
 /* Define if supporting skins */
 /* #undef SUPPORT_SKINS */
 
 /* Define if supporting search transliteration */
-#define SUPPORT_TRANSLITERATION 
+#define SUPPORT_TRANSLITERATION /**/
 
 /* Define if using VFS fonts */
-#define SUPPORT_VFS_FONTS 
+#define SUPPORT_VFS_FONTS /**/
 
 /* Define if supporting word lookup */
-#define SUPPORT_WORD_LOOKUP 
+#define SUPPORT_WORD_LOOKUP /**/

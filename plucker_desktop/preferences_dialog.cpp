@@ -766,7 +766,7 @@ void preferences_dialog::on_showcase_details_button( wxCommandEvent &event )
                                             };
   
     // Show the dialog 
-    size_t number_of_selected_items = wxGetMultipleChoices( selected_index_numbers,
+    size_t number_of_selected_items = wxGetSelectedChoices( selected_index_numbers,
                                         _( "Fields to display in details pane:" ),
                                         _( "Select desired fields" ),
                                         WXSIZEOF( showcase_field_names ), showcase_field_names,

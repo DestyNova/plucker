@@ -481,7 +481,7 @@ wxString get_plucker_directory( long directory_name )
             default_directory = get_bundle_runtime_files_directory();
             default_directory += wxT( "/plucker_desktop/resource" );
 #else
-            default_directory = wxT( "/usr/share/plucker-desktop/resource" );
+            default_directory = wxT( "/usr/share/plucker-desktop/resource" ); // this ignores the user's chosen install prefix
 #endif
 
             directory = the_configuration->Read( wxT( "/PLUCKER_DESKTOP/directory_resource" ),

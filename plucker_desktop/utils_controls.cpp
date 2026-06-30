@@ -229,7 +229,8 @@ bool utils_controls::textctrl_filename_selection
     // Must check for non-null string before calling wxSplitPath
     if ( old_filename_string != wxT( "" ) )
     {
-        wxSplitPath( old_filename_string, &old_directory, &old_base, &old_extension );
+        wxString tmp_filename = old_filename_string.Clone();
+        wxFileName::SplitPath(tmp_filename, NULL, &old_directory, &old_base, &old_extension);
     }
     
     // If there was a directory part, make that default directory
@@ -260,7 +261,7 @@ bool utils_controls::textctrl_filename_selection
 	long style;
     if ( allow_multiple == TRUE )
     {
-        style = wxMULTIPLE;
+        style = wxFD_MULTIPLE;
     }  
 	else
 	{

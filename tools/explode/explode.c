@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 /* This code requires the Independent JPEG Group libjpeg library, version 6b or later */
 #include <jpeglib.h>

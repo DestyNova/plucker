@@ -169,7 +169,9 @@ main_frame::main_frame( wxWindow* parent )
     // once that capacity becomes available).
     wxIconBundle a_icon_bundle;
 
-    a_icon_bundle.AddIcon( get_plucker_directory( RESOURCES ) << wxT( "/icons_application" ) <<
+    wxString rsc_dir = get_plucker_directory( RESOURCES );
+
+    a_icon_bundle.AddIcon( rsc_dir << wxT( "/icons_application" ) <<
                            wxT( "/" ) << wxT( "application_32x32.xpm" ), wxBITMAP_TYPE_XPM );
 
     a_icon_bundle.AddIcon( get_plucker_directory( RESOURCES ) << wxT( "/icons_application" ) <<
