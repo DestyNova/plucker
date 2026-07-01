@@ -48,7 +48,7 @@ PPIDIR          =   ppi
 WAIT_ICON       =   bubble
 
 TYPE            =   @TYPE@
-DEBUG_LOG       =   
+DEBUG_LOG       =   -DDEBUG -DDEBUG_LOG
 
 SEGMENTDEF      =   Plucker.def
 MULTISEG_LD     =   Plucker-sections.ld
@@ -97,7 +97,7 @@ SOURCES         =   viewer.c os.c screen.c metadocument.c doclist.c control.c \
                     paragraph.c uncompress.c keyboard.c keyboardform.c \
                     list.c link.c renamedocform.c hardcopyform.c font.c \
                     table.c fullscreenform.c annotation.c annotationform.c \
-                     hires.c rotate.c rotatebitmap.c grayfont.c prefslookup.c xlit.c DIA.c resize.c
+                     debug.c hires.c rotate.c rotatebitmap.c grayfont.c prefslookup.c xlit.c DIA.c resize.c
 
 PALMCUNITSRC    =   $(PALMCUNITDIR)/TestRun.c $(PALMCUNITDIR)/TestDB.c \
                     $(PALMCUNITDIR)/AssertImpl.c $(PALMCUNITDIR)/Util.c \

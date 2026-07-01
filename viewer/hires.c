@@ -197,18 +197,30 @@ Boolean ConvertImageToV3
     )
 {
     BitmapTypeV3* imagePtrV3;
+    static ColorTableType *colTab;
+    // UInt8 depth;
+    // UInt16 colTabSize;
+    /* Remember the colour table of the very first loaded image, then never use another...
+     * I don't know why this helps, since the colour table should be the exact same for all
+     * images converted by pyplucker. But this seems to solve the problem for me, for now.
+     * TODO: Figure out how to avoid this awful hack.
+     */
+    if (!colTab)
+      colTab = BmpGetColortable(*imagePtr);
 
     if ( ! IsHiResTypePalm( hiResType ) )
         return false;
 
-    imagePtrV3 = BmpCreateBitmapV3( *imagePtr, nativeDensity,
-        BmpGetBits( *imagePtr ), NULL );
+    // depth = BmpGetBitDepth(*imagePtr);
+    // colTabSize = BmpColortableSize(*imagePtr);
+    // FORMMSG( _( "ConvertImageToV3, compress err: %d, nativeDensity: %d, depth: %d, compression: %d, colour table size: %d\n", err, nativeDensity, depth, ct, colTabSize) );
+    // imagePtrV3 = BmpCreateBitmapV3( *imagePtr, nativeDensity, BmpGetBits( *imagePtr ), NULL );
+    imagePtrV3 = BmpCreateBitmapV3( *imagePtr, nativeDensity, BmpGetBits( *imagePtr ), colTab );
 
-    if ( imagePtrV3 == NULL )
+    if (imagePtrV3 == NULL)
         return false;
 
     *imagePtr = (BitmapType*) imagePtrV3;
-
     return true;
 }
 
@@ -224,9 +236,10 @@ void GeneralWinDrawBitmap
 {
     Boolean       converted;
     converted = ConvertImageToV3( &bitmap );
-    WinDrawBitmap( bitmap, x, y );
-    if ( converted )
+    WinPaintBitmap( bitmap, x, y );
+    if (converted) {
         BmpDelete( bitmap );
+    }
 }
 
 
@@ -447,10 +460,10 @@ static void AdjustBoundsStandardToNative
 static Boolean PalmHiResSupported( void )
 {
     if ( SupportHighDensity() && kDensityLow != PalmGetDensity() ) {
-        MSG( _( "Palm HiRes supported\n" ) );
+        //MSG( _( "Palm HiRes supported\n" ) );
         return true;
     }
-    MSG( _( "Palm HiRes not supported\n" ) );
+    //MSG( _( "Palm HiRes not supported\n" ) );
     return false;
 }
 
@@ -524,11 +537,11 @@ static Boolean SonyHiResSupported( void )
     /* If we're on a sony system, and have access to the HRLib.. */
     if ( err == errNone &&
          sonySysFtrSysInfoP->libr & sonySysFtrSysInfoLibrHR ) {
-        MSG( _( "Sony HiRes supported\n" ) );
+        //MSG( _( "Sony HiRes supported\n" ) );
         return true;
     }
 #endif
-    MSG( _( "Sony HiRes not supported\n" ) );
+    //MSG( _( "Sony HiRes not supported\n" ) );
     return false;
 }
 
@@ -553,14 +566,14 @@ static Err SonyHiResInitialize( void )
 
     if ( err == errNone ) {
         /* Looks good, sony hires is available */
-        MSG( _( "Sony OS4 HiRes initialized\n" ) );
+        //MSG( _( "Sony OS4 HiRes initialized\n" ) );
         LoadCustomFonts( SONY_FONTS );
         nativeDensity = kDensityDouble;
     }
     else {
         err = errNoHiRes; /* just incase HROpen fails */
         sonyHiResRefNum = NULL;
-        MSG( _( "Sony HiRes failed to initialize\n" ) );
+        //MSG( _( "Sony HiRes failed to initialize\n" ) );
     }
 #else
     sonyHiResRefNum = NULL;
@@ -584,13 +597,13 @@ static Err SonyHiResStop( void )
 {
 #ifdef HAVE_SONY_SDK
     if ( sonyHiResRefNum == NULL ) {
-        MSG( _( "Sony HiRes doesn't need to be stopped\n" ) );
+        //MSG( _( "Sony HiRes doesn't need to be stopped\n" ) );
         return errNoHiRes;
     }
     WinScreenMode( winScreenModeSetToDefaults, NULL, NULL, NULL, NULL );
     HRClose( sonyHiResRefNum );
     sonyHiResRefNum = NULL;
-    MSG( _( "Sony HiRes stopped\n" ) );
+    //MSG( _( "Sony HiRes stopped\n" ) );
 
     /* no longer available, but support remains */
     hiResType     = noHiRes;
@@ -614,11 +627,11 @@ static Boolean HanderaHiResSupported( void )
     /* Do something with vgaVersion? */
 
     if ( err == errNone ) {
-        MSG( _( "Handera HiRes supported\n" ) );
+        //MSG( _( "Handera HiRes supported\n" ) );
         return true;
     }
 #endif
-    MSG( _( "Handera HiRes not supported\n" ) );
+    //MSG( _( "Handera HiRes not supported\n" ) );
     return false;
 }
 
@@ -637,10 +650,10 @@ static Err HanderaHiResInitialize( void )
 
     if ( err == errNone ) {
         nativeDensity = kDensityOneAndAHalf;
-        MSG( _( "Handera HiRes initialized\n" ) );
+        //MSG( _( "Handera HiRes initialized\n" ) );
     }
     else {
-        MSG( _( "Handera HiRes not initialized\n" ) );
+        //MSG( _( "Handera HiRes not initialized\n" ) );
     }
 #else
     err = errNoHiRes;
@@ -658,7 +671,7 @@ static Err HanderaHiResStop( void )
 
     hiResType     = noHiRes;
     nativeDensity = kDensityLow;
-    MSG( _( "Handera HiRes stopped\n" ) );
+    //MSG( _( "Handera HiRes stopped\n" ) );
 #endif
     SetStandardFunctions();
     return errNone;

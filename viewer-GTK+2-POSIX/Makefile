@@ -9,7 +9,7 @@ subdir          = viewer-GTK+2-POSIX
 
 DESTDIR	        =
 
-BINDIR          = $(DESTDIR)/home/omf/.local/bin
+BINDIR          = $(DESTDIR)/usr/local/bin
 DATADIR         = $(DESTDIR)${prefix}/share/plucker
 
 UNPLUCK_DIR     = $(top_builddir)/tools/unpluck

@@ -31,6 +31,7 @@
 #include "rotatebitmap.h"
 #include "const.h"
 #include "fullscreenform.h"
+#include "debug.h"
 
 #define NO_GRAY_FONT_SUBSTITUTION
 #include "rotate.h"
@@ -782,8 +783,6 @@ Boolean RotSupportDrawBitmapNow( void )
    return ( Prefs()->rotate == ROTATE_ZERO || Support35() );
 }
 
-
-
 void RotDrawBitmap
        (
        BitmapType* bitmap,
@@ -804,8 +803,9 @@ void RotDrawBitmap
         GeneralWinDrawBitmap( bitmap, x, y );
         return;
     }
-    if ( ! Support35() )
+    if ( ! Support35() ) {
         return;
+    }
     BmpGlueGetDimensions( bitmap, &width, &height, &rowBytes );
     bitDepth      = BmpGlueGetBitDepth( bitmap );
     colorTable    = BmpGetColortable( bitmap );

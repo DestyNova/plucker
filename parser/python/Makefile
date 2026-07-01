@@ -17,7 +17,7 @@ VERSION		=	2005-02-07-cvs
 
 DESTDIR		=
 
-BINDIR		=	$(DESTDIR)/home/omf/.local/bin
+BINDIR		=	$(DESTDIR)/usr/local/bin
 MODULE_DIR	=	$(DESTDIR)/site-packages/PyPlucker
 
 JAVA_TARGET	=	

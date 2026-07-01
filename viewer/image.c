@@ -217,12 +217,12 @@ static void DrawInlineImageByHandle
                     &subWidth );
                 node = ListNext( image->data.multiList, node );
             }
-        }
-        else {
+        } else {
             MSG( _( "image #%ld drawing position: %dx%d+%d+%d\n",
                   image->reference, tContext->cursorX,
                   (Int16)tContext->cursorY - image->height, image->width,
                   image->height ) );
+            // death
             RotDrawBitmap( image->bitmap, tContext->cursorX,
                 tContext->cursorY - image->height );
         }
@@ -230,9 +230,9 @@ static void DrawInlineImageByHandle
 
     *width = image->width;
 
-    MSG( _( "image #%ld (type %d)\n", image->reference, image->type ) );
+    //MSG( _( "image #%ld (type %d)\n", image->reference, image->type ) );
 
-    UnlockImage( image );
+    UnlockImage(image);
 }
 
 
@@ -686,22 +686,22 @@ static void ReleaseImageHandle
 
     switch ( image->type ) {
         case MULTIIMAGE:
-            MSG( _( "Releasing MULTIIMAGE handle\n" ) );
+            //MSG( _( "Releasing MULTIIMAGE handle\n" ) );
             ListRelease( image->data.multiList );
             break;
 
         case UNCOMPRESSED:
-            MSG( _( "Releasing UNCOMPRESSED handle\n" ) );
+            //MSG( _( "Releasing UNCOMPRESSED handle\n" ) );
             break;
 
         case OPTIMIZED:
-            MSG( _( "Releasing OPTIMIZED handle\n" ) );
+            //MSG( _( "Releasing OPTIMIZED handle\n" ) );
             PortableBmpDelete( image->data.bitmap );
             image->data.bitmap = NULL;
             break;
 
         case VERSION3_BMP:
-            MSG( _( "Releasing VERSION3_BMP handle\n" ) );
+            //MSG( _( "Releasing VERSION3_BMP handle\n" ) );
             BmpDelete( image->data.bitmap );
             image->data.bitmap = NULL;
             /* By setting type to VERSION3_BMP, we indicate that we created
@@ -711,7 +711,7 @@ static void ReleaseImageHandle
 
         case CACHE_STORAGE:
             if ( ! keepCache ) {
-                MSG( _( "Releasing CACHE_STORAGE handle\n" ) );
+                //MSG( _( "Releasing CACHE_STORAGE handle\n" ) );
                 RemoveCacheRecord( IMAGEHANDLE, image->reference );
             }
             break;
@@ -818,9 +818,9 @@ static LinkedList ReadMultiImageRecord
     *totalImages = ( imageRecord->size - sizeof( MultiImageRecordType ) ) / 2;
     images      = (UInt8*) multiImageRecord + sizeof( MultiImageRecordType );
 
-    MSG( _( "multiImageRecord->rows: %d\n", multiImageRecord->rows ) );
-    MSG( _( "multiImageRecord->columns: %d\n", multiImageRecord->columns ) );
-    MSG( _( "totalImages: %d\n", *totalImages ) );
+    //MSG( _( "multiImageRecord->rows: %d\n", multiImageRecord->rows ) );
+    //MSG( _( "multiImageRecord->columns: %d\n", multiImageRecord->columns ) );
+    //MSG( _( "totalImages: %d\n", *totalImages ) );
 
     for ( i = 0; i < *totalImages; i++ ) {
         ErrTry {

@@ -20,7 +20,7 @@ EXPLODE_DIR     =   $(TOOLS_DIR)/explode
 GTKVIEWER_DIR   =   viewer-GTK+2-POSIX
 CPLUCKER_DIR    =   $(PARSER_DIR)/c++
 
-BINDIR          =   $(DESTDIR)/home/omf/.local/bin
+BINDIR          =   $(DESTDIR)/usr/local/bin
 DOCDIR          =   $(DESTDIR)${prefix}/share/plucker/doc
 DATADIR         =   $(DESTDIR)${prefix}/share/plucker
 

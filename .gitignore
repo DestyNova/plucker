@@ -1,14 +1,29 @@
 # binaries
 plucker_desktop/plucker-desktop
 tools/explode/netscape4-plucker-helper
+viewer/armlets/code.stamp
+viewer/armlets/rotatebitmap
+viewer/armlets/search
+viewer/cleaner/cleaner
+viewer/fonts/fontconv
+viewer/fonts/toprc
+viewer/ppi/ppi
+viewer/viewer
+*.pdb
+*.prc
 
 # build artifacts
+*.bin
 *.def
+.depend
+*.ld
 *.log
 *.o
 *.rcp
+*.ro
+*.s
+*.s0
 *.sedscr
-.depend
 
 # autoconf artifacts
 autom4te.cache

@@ -4,7 +4,7 @@
 
 SHELL           =   /bin/bash
 
-prefix          =   /home/omf/.local
+prefix          =   /usr/local
 top_builddir    =   ..
 subdir          =   docs
 srcdir          =   .

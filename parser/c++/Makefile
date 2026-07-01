@@ -11,8 +11,8 @@ srcdir          =   .
 
 DESTDIR	        =
 
-BINDIR          =   $(DESTDIR)/home/omf/.local/bin
-LIBDIR          =   $(DESTDIR)/home/omf/.local/lib
+BINDIR          =   $(DESTDIR)/usr/local/bin
+LIBDIR          =   $(DESTDIR)/usr/local/lib
 DATADIR         =   $(DESTDIR)${prefix}/share/plucker
 
 INSTALL         =   /usr/bin/install -c
