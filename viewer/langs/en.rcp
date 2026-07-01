@@ -115,7 +115,7 @@ BEGIN
 "$$ABOUT: BODY4"                    =   "under the conditions of the Free"
 "$$ABOUT: BODY5"                    =   "Software Foundation's General"
 "$$ABOUT: BODY6"                    =   "Public License."
-"$$ABOUT: WEBSITE"                  =   "www.plkr.org"
+"$$ABOUT: WEBSITE"                  =   "github.com/DestyNova/plucker"
 "$$ABOUT: OK"                       =   "OK"
 "$$ABOUT: TITLE"                    =   "About Plucker"
 

@@ -29,4 +29,5 @@ viewer/viewer
 autom4te.cache
 config.log
 config.status
+configure
 Makefile
