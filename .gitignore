@@ -1,12 +1,17 @@
-config.log
-*.o
-Makefile
-autom4te.cache
-.depend
-*.rcp
-*.def
-*.sedscr
-tools/explode/netscape4-plucker-helper
+# binaries
 plucker_desktop/plucker-desktop
+tools/explode/netscape4-plucker-helper
+
+# build artifacts
+*.def
 *.log
+*.o
+*.rcp
+*.sedscr
+.depend
+
+# autoconf artifacts
+autom4te.cache
+config.log
 config.status
+Makefile
